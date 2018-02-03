@@ -417,4 +417,8 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 
+
+# App folders
 build/
+
+secrets
