@@ -1,0 +1,19 @@
+{
+  "name": "fb-hack-18",
+  "version": "1.0.0",
+  "description": "Facebook Food Scraper",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thahleel/fb-hack-18.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Thahleel/fb-hack-18/issues"
+  },
+  "homepage": "https://github.com/Thahleel/fb-hack-18#readme"
+}
