@@ -421,4 +421,4 @@ OpenCover/
 # App folders
 build/
 
-secrets
+secrets.env
