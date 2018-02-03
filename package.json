@@ -24,6 +24,8 @@
     "bunyan": "^1.8.12",
     "compression": "^1.7.1",
     "express": "^4.16.2",
+    "facebook-events-by-location-core": "^0.9.1",
+    "fb": "^2.0.0",
     "helmet": "^3.10.0"
   },
   "devDependencies": {
