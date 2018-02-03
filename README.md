@@ -7,6 +7,8 @@ A Facebook API token, and `docker`.
 
 ## Development
 
-Setup your keys in `docker-compose.yml`.
+To setup your keys:
+
+    echo FB_API_KEY=YOUR_FB_API_KEY >> .env
 
 Run `docker-compose up`
