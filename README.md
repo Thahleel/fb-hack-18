@@ -9,6 +9,6 @@ A Facebook API token, and `docker`.
 
 To setup your keys:
 
-    echo FB_API_KEY=YOUR_FB_API_KEY >> .env
+    echo FB_API_KEY=YOUR_FB_API_KEY >> secrets.env
 
 Run `docker-compose up`
