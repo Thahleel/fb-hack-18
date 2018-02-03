@@ -4,7 +4,9 @@
   "description": "Facebook Food Scraper",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r @std/esm server.mjs",
+    "dev": "nodemon -e mjs,js -L --exec npm start | bunyan"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,19 @@
   "bugs": {
     "url": "https://github.com/Thahleel/fb-hack-18/issues"
   },
-  "homepage": "https://github.com/Thahleel/fb-hack-18#readme"
+  "homepage": "https://github.com/Thahleel/fb-hack-18#readme",
+  "dependencies": {
+    "@std/esm": "^0.20.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "helmet": "^3.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "nodemon": "^1.14.11"
+  }
 }
