@@ -1,18 +1,29 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import 'typeface-roboto'
+
+import EventList from './components/EventList'
+
 import './App.css'
 
 class App extends Component {
+  constructor( props ) {
+    super( props )
+
+    this.state = {
+      location: null,
+      events: [
+        {}, {}, {}, {}, {}
+      ],
+    }
+  }
+
   render() {
+    const { events } = this.state
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="app">
+        <h1 className="title">Feed Me Forever</h1>
+        <EventList events={events} />
       </div>
     )
   }

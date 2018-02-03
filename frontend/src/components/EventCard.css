@@ -1,0 +1,54 @@
+.event {
+    margin: 20px 50px;
+    height: 100px;
+    flex: 1 1 25%;
+    position: relative;
+    background: black;
+    color: white;
+    font-family: 'roboto', sans-serif;
+    transition: 0.5s all;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 3px black;
+}
+
+.event .badge {
+    position: absolute;
+    padding: 4px;
+    background-color: orangered;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+}
+
+.event img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    filter: blur(3px) brightness(70%);
+    transition: 0.7s all;
+}
+
+.event img:hover {
+    filter: invert(15%) blur(4px);
+}
+
+.event .name {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.event .location {
+    position: absolute;
+    bottom: 0;
+}
+
+.event .time {
+    position: absolute;
+    right: 0;
+}
+
+.event .price {
+    right: 2px;
+    top: 5px;
+}
