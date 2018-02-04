@@ -1,11 +1,43 @@
 .app {
+    position: relative;
     user-select: none;
+}
+
+.app .background {
+    filter: blur(5px) brightness(60%);
+    position: fixed;
+    width: 110%;
+    height: 110%;
+    opacity: 0.5;
+    left: -10px;
+    top: -10px;
+    background: url("https://pixabay.com/get/eb35b00e2ff2093ed1534705fb0938c9bd22ffd41cb0164697f1c178a2/background-2011768_1920.jpg");
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .app .title {
     margin: 0;
     text-align: center;
     padding: 20px;
-    background-color: red;
+    background-color: rgba(255, 50, 0, 0.8);
     font-family: 'signika', sans-serif;
 }

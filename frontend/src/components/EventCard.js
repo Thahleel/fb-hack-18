@@ -6,19 +6,19 @@ import './EventCard.css'
 
 const EventCard = ( {
   name,
-  imageUrl,
+  coverPicture,
   timeStart,
   timeEnd,
-  location,
+  placeName,
   details,
   price,
   foods,
 } ) => (
   <div className="event">
-    <img src={imageUrl} alt="Background" />
+    <img src={coverPicture} alt="Background" />
     <h2 className="name">{name}</h2>
 
-    <span className="location">{location}</span>
+    <span className="location">{placeName}</span>
     <span className="price badge">{price}</span>
     <span className="food badge">{foods}</span>
     <span className="time">{dateToHours( timeStart )} - {dateToHours( timeEnd )}</span>
@@ -27,13 +27,11 @@ const EventCard = ( {
 
 EventCard.defaultProps = {
   name: 'Pizza Society',
-  location: 'Haha Building 101',
-  timeStart: Date.now(),
-  timeEnd: Date.now(),
+  placeName: 'Haha Building 101',
   price: 'Free',
   url: '',
   // foods: [ 'Pizza', 'Chips' ],
-  imageUrl: 'https://scontent.xx.fbcdn.net/v/t31.0-8/26840868_1863083100369801_1670043283152809176_o.jpg?oh=072b5fefd1adb346b80f62e7743d831f&oe=5ADB862E',
+  coverPicture: 'https://scontent.xx.fbcdn.net/v/t31.0-8/26840868_1863083100369801_1670043283152809176_o.jpg?oh=072b5fefd1adb346b80f62e7743d831f&oe=5ADB862E',
 }
 
 export default EventCard

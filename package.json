@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node -r @std/esm server.mjs",
-    "dev": "nodemon -e mjs,js -L --exec npm start | bunyan"
+    "dev": "nodemon -e mjs -L --exec npm start | bunyan"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "body-parser": "^1.18.2",
     "bunyan": "^1.8.12",
     "compression": "^1.7.1",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "facebook-events-by-location-core": "^0.9.1",
     "fb": "^2.0.0",
