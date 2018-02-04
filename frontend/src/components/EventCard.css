@@ -60,6 +60,12 @@
     bottom: 28px;
 }
 
+.event .food {
+    position: absolute;
+    right: 4px;
+    bottom: 46px;
+}
+
 .event .price {
     text-transform: uppercase;
     font-weight: bolder;
@@ -67,5 +73,5 @@
     position: absolute;
     padding: 4px;
     right: 0px;
-    bottom: 45px;
+    bottom: 60px;
 }

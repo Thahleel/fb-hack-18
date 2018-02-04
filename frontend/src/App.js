@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import 'typeface-signika'
+import sample from 'lodash/sample'
 
 import logo from './assets/logo.png'
 
@@ -7,6 +8,13 @@ import EventList from './components/EventList'
 import Switcher from './components/Switcher'
 
 import './App.css'
+
+const foods = [
+  'Pizza',
+  'Sandwiches',
+  'Crisps',
+  'Light Refreshments'
+]
 
 class App extends Component {
   constructor( props ) {
@@ -49,6 +57,7 @@ class App extends Component {
           ...event,
           timeStart: new Date( event.startTime ),
           timeEnd: new Date( event.endTime ),
+          foodType: sample( foods )
         } ) )
         .sort( ( { timeStart: t1 }, { timeStart: t2 } ) => t1 - t2 )
 
@@ -104,7 +113,8 @@ class App extends Component {
         <div className="title">
           <img className="logo" src={logo} />
           <h1>Hungry Student</h1>
-          <a href={`http://${window.location.hostname}:8080/ics?lat=${lat}&lng=${lng}`} target="_blank">Download iCal</a>
+          <a href={`http://${window.location.hostname}:8080/ics?lat=${lat}&lng=${lng}`}
+             target="_blank">Download iCal</a>
         </div>
         <EventList events={events} />
       </div>

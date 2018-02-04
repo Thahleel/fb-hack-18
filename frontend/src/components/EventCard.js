@@ -13,7 +13,7 @@ const EventCard = ( {
   placeName,
   details,
   price,
-  foods,
+  foodType,
 } ) => (
   <a className="event" href={`https://www.facebook.com/events/${id}`} target="_blank">
     <img src={coverPicture} alt="Background" />
@@ -21,7 +21,7 @@ const EventCard = ( {
 
     <span className="location">{placeName}</span>
     <span className="price badge">{price}</span>
-    <span className="food badge">{foods}</span>
+    <span className="food badge">{foodType}</span>
     <span className="time">{dateToHours( timeStart )} - {dateToHours( timeEnd )}</span>
   </a>
 )
