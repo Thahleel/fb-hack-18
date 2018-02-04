@@ -22,10 +22,12 @@ async function main() {
 
   apiRouter.get('/events', async (req, res) => {
     try {
-      const events = await facebook.searchForEvents()
+      const lat = req.query.lat
+      const lng = req.query.lng
+      const events = await facebook.searchForEvents(lat, lng)
       res.json(events)
     } catch (e) {
-      res.status(500).send(JSON.stringify(e));
+      res.status(500).json({error: e.message})
     }
   })
   server.use('/api', apiRouter)
