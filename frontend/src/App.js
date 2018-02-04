@@ -42,7 +42,7 @@ class App extends Component {
       // Load from API
       const events = (
         await (
-          await fetch( `http://localhost:8080/api/events?lat=${lat}&lng=${lng}` ) )
+          await fetch( `http://${window.location.hostname}:8080/api/events?lat=${lat}&lng=${lng}` ) )
           .json()
       )
         .map( event => ( {
@@ -104,7 +104,7 @@ class App extends Component {
         <div className="title">
           <img className="logo" src={logo} />
           <h1>Feed Me Forever</h1>
-          <a href={`http://localhost:8080/ics?lat=${lat}&lng=${lng}`} target="_blank">iCal</a>
+          <a href={`http://${window.location.hostname}:8080/ics?lat=${lat}&lng=${lng}`} target="_blank">iCal</a>
         </div>
         {/*<Switcher options={[ 'Live', 'Saved' ]}*/}
         {/*selected={mode}*/}
