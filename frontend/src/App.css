@@ -35,9 +35,37 @@
 }
 
 .app .title {
+    position: relative;
     margin: 0;
     text-align: center;
     padding: 20px;
     background-color: rgba(255, 50, 0, 0.8);
     font-family: 'signika', sans-serif;
+}
+
+.app .title h1 {
+    margin: 0;
+}
+
+.app .title a {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    height: 30px;
+    margin: auto;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: 0.3s all;
+}
+
+.app .title a:hover {
+    background-color: white;
+    color: rgba(255, 50, 0, 0.9);
+
+
 }

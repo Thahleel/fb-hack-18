@@ -74,7 +74,12 @@ class App extends Component {
   componentDidMount() {
     this.loadEvents()
     this.getCurrentPosition()
-      .then( pos => this.setState( { location: pos } ) && console.log( pos ) )
+      .then( ( { latitude, longitude } ) => this.setState( {
+        location: {
+          lat: latitude,
+          lng: longitude,
+        }
+      } ) )
       .catch( e => console.error( e ) )
   }
 
@@ -87,12 +92,17 @@ class App extends Component {
   }
 
   render() {
-    const { events, mode } = this.state
+    const { events, mode, location: { lat, lng } } = this.state
+
+    console.log( this.state.location )
 
     return (
       <div className="app">
         <div className="background" />
-        <h1 className="title">Feed Me Forever</h1>
+        <div className="title">
+          <h1>Feed Me Forever</h1>
+          <a href={`http://localhost:8080/ics?lat=${lat}&lng=${lng}`} target="_blank">iCal</a>
+        </div>
         {/*<Switcher options={[ 'Live', 'Saved' ]}*/}
         {/*selected={mode}*/}
         {/*onChange={mode => this.setState( { mode } )}*/}
