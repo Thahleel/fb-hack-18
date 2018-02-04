@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import 'typeface-signika'
 
+import logo from './assets/logo.png'
+
 import EventList from './components/EventList'
 import Switcher from './components/Switcher'
 
@@ -100,6 +102,7 @@ class App extends Component {
       <div className="app">
         <div className="background" />
         <div className="title">
+          <img className="logo" src={logo} />
           <h1>Feed Me Forever</h1>
           <a href={`http://localhost:8080/ics?lat=${lat}&lng=${lng}`} target="_blank">iCal</a>
         </div>
