@@ -14,6 +14,10 @@ class App extends Component {
       events: [
         { timeStart: new Date( '2018-02-04 23:23:23' ) },
         { timeStart: new Date( '2018-02-04 23:23:23' ) },
+        { timeStart: new Date( '2018-02-04 23:23:23' ) },
+        { timeStart: new Date( '2018-02-04 23:23:23' ) },
+        { timeStart: new Date( '2018-02-04 23:23:23' ) },
+        { timeStart: new Date( '2018-02-04 23:23:23' ) },
         { timeStart: new Date( '2018-02-05 23:23:23' ) },
         { timeStart: new Date( '2018-02-06 23:23:23' ) },
       ],
