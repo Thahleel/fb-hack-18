@@ -27,7 +27,8 @@
     "express": "^4.16.2",
     "facebook-events-by-location-core": "^0.9.1",
     "fb": "^2.0.0",
-    "helmet": "^3.10.0"
+    "helmet": "^3.10.0",
+    "ics": "^2.0.1"
   },
   "devDependencies": {
     "eslint": "^4.9.0",
