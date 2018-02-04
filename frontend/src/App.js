@@ -103,13 +103,9 @@ class App extends Component {
         <div className="background" />
         <div className="title">
           <img className="logo" src={logo} />
-          <h1>Feed Me Forever</h1>
-          <a href={`http://${window.location.hostname}:8080/ics?lat=${lat}&lng=${lng}`} target="_blank">iCal</a>
+          <h1>Hungry Student</h1>
+          <a href={`http://${window.location.hostname}:8080/ics?lat=${lat}&lng=${lng}`} target="_blank">Download iCal</a>
         </div>
-        {/*<Switcher options={[ 'Live', 'Saved' ]}*/}
-        {/*selected={mode}*/}
-        {/*onChange={mode => this.setState( { mode } )}*/}
-        {/*/>*/}
         <EventList events={events} />
       </div>
     )

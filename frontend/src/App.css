@@ -11,7 +11,7 @@
     opacity: 0.5;
     left: -10px;
     top: -10px;
-    background: url("https://pixabay.com/get/eb35b00e2ff2093ed1534705fb0938c9bd22ffd41cb0164697f1c178a2/background-2011768_1920.jpg");
+    background: 000;
 }
 
 ::-webkit-scrollbar {
@@ -38,8 +38,11 @@
     position: relative;
     margin: 0;
     text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 50, 0, 0.8);
+    padding: 15px;
+        font-style: italic;
+    font-size: 15pt;
+    background-color: rgba(232, 65, 24,1.0);
+    color: rgba(209, 216, 224,1.0);
     font-family: 'signika', sans-serif;
 }
 
@@ -54,6 +57,7 @@
     bottom: 0;
     height: 30px;
     margin: auto;
+    font-style: normal;
     text-decoration: none;
     color: black;
     border-radius: 5px;

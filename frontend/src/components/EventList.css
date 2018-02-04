@@ -4,16 +4,16 @@
 
 .event-group {
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
 }
 
 .event-group .date {
     text-transform: uppercase;
-    margin: 15px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 1);
+    font-size: 20pt;
+    padding-left: 20px;
+    font-family: 'signika', sans-serif;
+    color: rgba(87, 96, 111,1.0);
     display: inline-block;
-    border-radius: 5px;
 }
 
 .event-list {

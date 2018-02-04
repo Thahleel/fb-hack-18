@@ -1,8 +1,8 @@
 .event {
     box-sizing: border-box;
-    height: 175px;
+    height: 200px;
     margin-right: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     width: 35%;
     max-width: 31.5%;
     flex: 1 1 auto;
@@ -12,19 +12,11 @@
     font-family: 'signika', sans-serif;
     transition: 0.5s all;
     cursor: pointer;
-    box-shadow: 1px 1px 1px 3px black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .event:nth-child(3n) {
     margin-right: 0;
-}
-
-.event .badge {
-    position: absolute;
-    padding: 4px;
-    background-color: orangered;
-    color: rgba(255, 255, 255, 0.9);
-    border-radius: 5px;
 }
 
 .event img {
@@ -41,22 +33,39 @@
 
 .event .name {
     position: absolute;
-    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+    text-align: right;
+    text-shadow: -2px -2px 30px rgba(150, 150, 150, 1);
+    font-size: 22px;
+    top: -15px;
+    right: 10px;
     width: 100%;
     opacity: 0.9;
+
 }
 
 .event .location {
+    text-transform: uppercase;
+    font-weight: bold;
     position: absolute;
-    bottom: 0;
+    font-size: 14pt;
+    right: 4px;
+    bottom: 4px;
 }
 
 .event .time {
     position: absolute;
-    right: 0;
+    right: 4px;
+    bottom: 28px;
 }
 
 .event .price {
-    right: 2px;
-    top: 5px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: lime;
+    position: absolute;
+    padding: 4px;
+    right: 0px;
+    bottom: 45px;
 }
