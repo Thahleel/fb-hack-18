@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import 'typeface-roboto'
+import 'typeface-signika'
 
 import EventList from './components/EventList'
 import Switcher from './components/Switcher'
