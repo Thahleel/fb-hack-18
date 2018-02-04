@@ -11,14 +11,17 @@ class App extends Component {
     super( props )
 
     this.state = {
-      location: null,
+      location: {
+        lat: 52.379252,// warwick
+        lng: -1.561470,
+      },
       mode: 'Live',
       events: [],
     }
   }
 
-  loadEvents = () => {
-    const { mode } = this.state
+  loadEvents = async () => {
+    const { mode, location: { lat, lng } } = this.state
 
     if ( mode === 'Saved' ) {
       // Load from Localstorage
@@ -35,25 +38,44 @@ class App extends Component {
       } )
     } else {
       // Load from API
-      this.setState( {
-        events: [
-          { timeStart: new Date( '2018-02-04 23:23:23' ) },
-          { timeStart: new Date( '2018-02-04 23:23:23' ) },
-          { timeStart: new Date( '2018-02-04 23:23:23' ) },
-          { timeStart: new Date( '2018-02-04 23:23:23' ) },
-          { timeStart: new Date( '2018-02-04 23:23:23' ) },
-          { timeStart: new Date( '2018-02-05 23:23:23' ) },
-          { timeStart: new Date( '2018-02-05 23:23:23' ) },
-          { timeStart: new Date( '2018-02-06 23:23:23' ) },
-          { timeStart: new Date( '2018-02-06 23:23:23' ) },
-          { timeStart: new Date( '2018-02-06 23:23:23' ) },
-        ],
-      } )
+      const events = (
+        await (
+          await fetch( `http://localhost:8080/api/events?lat=${lat}&lng=${lng}` ) )
+          .json()
+      )
+        .map( event => ( {
+          ...event,
+          timeStart: new Date( event.startTime ),
+          timeEnd: new Date( event.endTime ),
+        } ) )
+        .sort( ( { timeStart: t1 }, { timeStart: t2 } ) => t1 - t2 )
+
+      console.log( events )
+
+      this.setState( { events } )
     }
+  }
+
+  getCurrentPosition() {
+    return new Promise( ( resolve, reject ) => {
+      navigator.geolocation.getCurrentPosition( ( position ) => {
+
+        let latitude = position.coords.latitude
+        let longitude = position.coords.longitude
+
+        resolve( { latitude, longitude } )
+
+      }, () => {
+        reject( 'We could not get your location.' )
+      }, { timeout: 5000 } )
+    } )
   }
 
   componentDidMount() {
     this.loadEvents()
+    this.getCurrentPosition()
+      .then( pos => this.setState( { location: pos } ) && console.log( pos ) )
+      .catch( e => console.error( e ) )
   }
 
   componentDidUpdate( prevProps, { mode: oldMode } ) {
@@ -69,11 +91,12 @@ class App extends Component {
 
     return (
       <div className="app">
+        <div className="background" />
         <h1 className="title">Feed Me Forever</h1>
-        <Switcher options={[ 'Live', 'Saved' ]}
-                  selected={mode}
-                  onChange={mode => this.setState( { mode } )}
-        />
+        {/*<Switcher options={[ 'Live', 'Saved' ]}*/}
+        {/*selected={mode}*/}
+        {/*onChange={mode => this.setState( { mode } )}*/}
+        {/*/>*/}
         <EventList events={events} />
       </div>
     )
