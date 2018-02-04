@@ -84,14 +84,14 @@ class App extends Component {
 
   componentDidMount() {
     this.loadEvents()
-    this.getCurrentPosition()
-      .then( ( { latitude, longitude } ) => this.setState( {
-        location: {
-          lat: latitude,
-          lng: longitude,
-        }
-      } ) )
-      .catch( e => console.error( e ) )
+    // this.getCurrentPosition()
+    //   .then( ( { latitude, longitude } ) => this.setState( {
+    //     location: {
+    //       lat: latitude,
+    //       lng: longitude,
+    //     }
+    //   } ) )
+    //   .catch( e => console.error( e ) )
   }
 
   componentDidUpdate( prevProps, { mode: oldMode } ) {
