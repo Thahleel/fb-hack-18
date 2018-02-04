@@ -1,7 +1,11 @@
 .event {
-    margin: 20px 50px;
+    box-sizing: border-box;
     height: 100px;
-    flex: 1 1 25%;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    width: 35%;
+    max-width: 31.5%;
+    flex: 1 1 auto;
     position: relative;
     background: black;
     color: white;
@@ -9,6 +13,10 @@
     transition: 0.5s all;
     cursor: pointer;
     box-shadow: 1px 1px 1px 3px black;
+}
+
+.event:nth-child(3n) {
+    margin-right: 0;
 }
 
 .event .badge {

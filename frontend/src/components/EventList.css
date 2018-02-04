@@ -1,15 +1,16 @@
 .event-group {
-    margin: 10px 20px;
     border: 1px solid black;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
 .event-group .date {
-    text-align: center;
+    text-transform: capitalize;
 }
 
 .event-list {
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
+    position: relative;
 }
