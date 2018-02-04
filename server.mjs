@@ -43,7 +43,9 @@ async function main() {
     const foodEvents = await nlp.filterFoodEvents(events)
     res.header('Content-Disposition', 'attachment; filename="food_events.ics"')
     res.header('Content-Type', 'text/calendar')
-    icalGenerator(foodEvents, cal => res.send(cal))
+    res.write('BEGIN:VCALENDAR\n')
+    icalGenerator(foodEvents, cal => res.write(cal.replace('END:VCALENDAR', '').replace('BEGIN:VCALENDAR', '')),
+    () => res.end('\nEND:VCALENDAR'))
   })
 
   // Start the server
