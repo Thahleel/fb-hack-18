@@ -6,6 +6,7 @@ import './EventCard.css'
 
 const EventCard = ( {
   name,
+  id,
   coverPicture,
   timeStart,
   timeEnd,
@@ -14,7 +15,7 @@ const EventCard = ( {
   price,
   foods,
 } ) => (
-  <div className="event">
+  <a className="event" href={`https://www.facebook.com/events/${id}`} target="_blank">
     <img src={coverPicture} alt="Background" />
     <h2 className="name">{name}</h2>
 
@@ -22,7 +23,7 @@ const EventCard = ( {
     <span className="price badge">{price}</span>
     <span className="food badge">{foods}</span>
     <span className="time">{dateToHours( timeStart )} - {dateToHours( timeEnd )}</span>
-  </div>
+  </a>
 )
 
 EventCard.defaultProps = {
