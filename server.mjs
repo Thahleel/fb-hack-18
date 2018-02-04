@@ -2,6 +2,7 @@ import express from 'express'
 
 import { setupExpress } from './lib/express'
 import FacebookEvents from './lib/facebook'
+import DescriptionAnalyser from './lib/nlp'
 
 import logger from './lib/logger'
 
@@ -19,13 +20,15 @@ async function main() {
   const apiRouter = express.Router()
 
   const facebook = new FacebookEvents();
+  const nlp = new DescriptionAnalyser();
 
   apiRouter.get('/events', async (req, res) => {
     try {
       const lat = req.query.lat
       const lng = req.query.lng
       const events = await facebook.searchForEvents(lat, lng)
-      res.json(events)
+      const foodEvents = await nlp.filterFoodEvents(events)
+      res.json(foodEvents)
     } catch (e) {
       res.status(500).json({error: e.message})
     }
